@@ -1,0 +1,51 @@
+<!--
+  Generated template for the AddRequestModalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+
+  <ion-navbar color="primary">
+  	<ion-buttons style="float:left;">
+	  	<button ion-button (click)="cancelAddRequest()"><ion-icon name="arrow-round-back"></ion-icon>
+	  	</button>
+  	</ion-buttons>
+
+    <ion-title >New Request</ion-title>
+  
+  	<ion-buttons end>
+  		<button ion-button end (click)="addRequestItems()">Next</button>
+  	</ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+
+
+<ion-content padding>
+	<ion-list>
+		<label>Laboratory <i class="fas fa-info-circle"></i></label>
+		<select id="laboratory" class="reqVal" [(ngModel)]="request.laboratory">
+			<option value="chemistry">Chemistry</option>
+			<option value="biology">Biology</option>
+		</select>
+	</ion-list>
+	<ion-list>
+		<label>Date needed</label>
+		<input type="datetime-local" name="date" class="reqVal" [(ngModel)]="request.requestNeeded">
+		
+	</ion-list>
+	
+	<ion-list>
+		<label>Authorized to Claim (Optional)</label> 
+		<input type="number" id="auth" class="reqVal" [(ngModel)]="request.proxyID" title="Enter student number of another user authorized to claim. If none, leave blank." placeholder=" Format: 2015XXXXX">
+		<span id="auth-error"></span>
+	</ion-list>
+	<!--<ion-list>
+		<label>Select Items</label>
+		<ion-searchbar placeholder="Filter Items"></ion-searchbar>
+	</ion-list>-->
+
+</ion-content>
